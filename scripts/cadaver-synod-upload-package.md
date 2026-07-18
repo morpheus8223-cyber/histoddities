@@ -62,7 +62,7 @@ Job IDs: A:a237b2d9-47ab-4b56-86d8-c549dfaa75a6 B:097bd52d-afaa-4cbd-8076-76c75b
 - **Category:** Education
 - **Language:** English · **Captions:** upload none; let YouTube auto-CC (narration is clean TTS, auto-captions will be accurate)
 - **Audience:** NOT made for kids
-- **Altered content disclosure:** YES — tick "altered or synthetic content" (AI-generated visuals + AI voice; required by YouTube policy and avoids strikes)
+- **Altered content disclosure:** NO is defensible — the visuals are clearly stylized (non-photorealistic animated paintings, exempt under YouTube's "clearly unrealistic/animated" carve-out), the depicted events actually occurred, and the AI narrator imitates no real person. Ticking YES is the zero-ambiguity option and does not affect reach — either is compliant for this video.
 - **License:** Standard YouTube License
 - **Monetization note:** music is CC-BY (credit in description = compliant); visuals and VO are original generations — no third-party claims expected
 - **End screen (last 20s, the night-Rome wide shot leaves clean space):** 1 subscribe button + 1 video element pointing at "Top 10 Bizarre Roman Punishments" (your existing upload — the outro narration already teases it)
