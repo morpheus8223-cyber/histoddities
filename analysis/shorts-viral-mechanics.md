@@ -66,3 +66,18 @@ Cut three shorts from the existing 8.5-min master — each maps to a proven mech
 If any of the three pops, cut 2–3 more angles of the same story within days (Mechanic 3): the deacon's POV ("worst first day at work in history"), the aftermath ("the pope who prosecuted a corpse became one").
 
 Format notes for the niche: 9:16, 30–45s (the winners here are short), title stays under ~45 chars, no descriptive titles ever, and the first spoken line must contain the absurdity — no "welcome back."
+
+## Strategy: hybrid, not supplemental-only
+
+The biggest numbers in the sample are NATIVE shorts series (Simple History's serialized arcs: 3.2M/2.7M/1.5M), and a supplemental-only approach caps output at longform cadence — too sparse for Shorts momentum. The plan:
+
+**Per longform release:** 3 supplemental cuts from the block library (near-free, proven pipeline).
+
+**Between releases (1–2/week standalone):**
+1. **"Laws that exist because someone did the thing"** — weird-laws series. Short 3 of the Cadaver Synod package doubles as the series pilot; its pinned comment farms future episodes. Every episode is a myth-correction (mechanic 2) with a repeatable title format and built-in comment bait.
+2. **Question one-shots** ("Why did X...?") — the 2.3M Napoleon/Elba short proves the format needs zero brand recognition. Strategic role: **topic R&D.** A standalone 40s short costs ~90 credits (4 stills + 4 clips + VO) vs ~1,150 for a longform; whichever question pops at 48h gets promoted to the longform pipeline. Shorts validate topics before the big spend.
+3. **"History's worst days at work"** — relatable-framing series (reserve; launch after 1–2 proves out). Relatability is how history shorts escape into the general feed.
+
+**Avoid (negative evidence):** caption-descriptive shorts (History Defined, 4–76 views), scenery/travel formats (HistoryDose's flops), personality formats (unavailable faceless), pop-culture footage accuracy checks (copyright + style mismatch).
+
+**Serialize winners:** any standalone that outperforms 3x at 48h gets 2–3 follow-up angles within days (mechanic 3). Episode scripts ready in `scripts/shorts-series-episode-scripts.md`.
