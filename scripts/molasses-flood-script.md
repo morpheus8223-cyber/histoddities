@@ -1,10 +1,14 @@
 # The Wave That Moved Faster Than People Could Run
 
-**Working title:** The Wave That Moved Faster Than People Could Run
+**Working title (revised to match History Matters' proven question-hook formula — see note below):**
+**Why Didn't Anyone Inspect The Tank That Killed 21 People In Boston?**
+
 **Alt titles (A/B test):**
-- Why A Flood of Molasses Killed 21 People In Boston
+- Why Did A Company Race To Empty Its Molasses Tank Before Prohibition?
 - The Day Boston Was Buried In 2.3 Million Gallons Of Molasses
-- The Disaster That Rewrote America's Engineering Laws
+- The Wave That Moved Faster Than People Could Run
+
+**Title note:** the original working title (now an alt) leaned on Mechanics 1/4 (peak-moment drama, hyper-specific numbers) rather than Mechanic 5 — the single tightest performer in the long-form dataset. History Matters' formula isn't only "named individual + why" (it's frequently a nation, company, or institution as the actor — "Why did France get so much of Africa?", "Why wasn't Stalin ousted?"). The revised title names the real institutional actor (United States Industrial Alcohol) and uses their most common frame, the negative-why accountability question ("Why didn't/wasn't..."), while keeping the wave as the thumbnail/cold-open hook unchanged.
 
 **Thumbnail text:** "THE WAVE MOVED FASTER THAN YOU CAN RUN" (a towering dark wave bursting through a brick tank wall into a crowded street, warm sepia urban-realist palette, single trapped figure silhouette in the foreground for scale)
 **Target length:** ~10–11 minutes (~1,750 words narration)
