@@ -77,3 +77,12 @@ The teenage deacon assigned to defend the corpse — what's YOUR legal strategy?
 ```
 In 897 AD the Vatican dug up a dead pope, dressed him in his robes, and put him on trial. He lost. New video is live — the full story of the Cadaver Synod.
 ```
+
+## Shorts package (3 vertical cuts, 1080x1920, 40s, delivered in chat)
+| File | Mechanic | Blocks | Suggested title | Post |
+|---|---|---|---|---|
+| short1-vertical.mp4 | Peak moment first | 1,3,4,5 | The Trial Where The Defendant Was Already Dead | Day 1, with the long-form video linked |
+| short2-vertical.mp4 | Question hook | 24,25,26,31 | Why Did The Vatican Dig Up A Dead Pope? | Day 3-4 |
+| short3-vertical.mp4 | Myth-correction | 42,29,33,43 | The Church Had To Ban Putting Corpses On Trial | Day 6-7 |
+
+Notes: blurred-canvas vertical format (full 16:9 painting preserved over blurred dark background — reframe tool was 374cr/short, skipped). Music bed not included in shorts (they use narration only; add trending/library audio in the YouTube Shorts editor if desired — native Shorts audio can help distribution). Link each Short to the main video via the "Related video" button. If one pops, cut follow-up angles of the same story (deacon POV, Stephen's downfall) — serialization mechanic. Assembly job IDs: s1:f53f2719 s2:23b81f81 s3:007e2fa4.
