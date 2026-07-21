@@ -31,6 +31,14 @@ Pulled directly from the highest-viewed videos identified in the long-form niche
 
 Rebuilt as `overlay_v2.py` in the production scratch tools: same idea as before (composite text locally rather than letting the AI bake it in, so it's pixel-consistent across every thumbnail) but with the corrected typography — Liberation Sans Bold, solid white fill, thin black stroke (~4px) purely for edge definition, drop shadow for lift, short 1–3 word lines, top-left aligned to match the two highest-performing real examples (History Matters, HistoryDose). Demonstrated on the Olof Palme thumbnail: "NEVER CONVICTED" over the existing noir background.
 
+## Follow-up: local text compositing turned out to be unnecessary
+
+Built a local PIL overlay (background generated text-free, typography composited in code) as the guaranteed-consistent fix, reasoning that AI-rendered text can't be pixel-identical across separate generations. Tested it head-to-head against just re-prompting Nano Banana Pro directly with the corrected simple style (explicit "plain bold white sans-serif, thin black outline only, no gradient, no serif" instruction instead of the old ornate description).
+
+**The direct one-step generation won.** It rendered the text cleanly with no glitches, and composed the scene better than the manual version (subject walking toward camera with a visible face, text integrated into the open sky naturally, rather than a rigid fixed block). The original Palme text glitch wasn't a sign that AI text rendering is unreliable — it was a symptom of the wrong, more ambiguous style prompt (ornate gradient/serif) inviting more room for the model to improvise. A simple, explicit style instruction removes that risk.
+
+**Revised production method:** single-step Nano Banana Pro generation with a locked prompt template (scene description + explicit plain-sans-serif/no-gradient/thin-outline instruction + 1–3 word text), no local overlay step by default. Keep the overlay script (`overlay_v2.py`) in reserve only in case a large batch later shows visible font drift across images.
+
 ## Outstanding: everything shipped before this correction uses the wrong text style
 
-This includes the Cadaver Synod thumbnail actually live on the channel right now, the 3 posted Shorts, and the 9 catalog-refresh images delivered earlier in this session. None are broken or unusable, but none match the evidence-backed pattern above. Regenerating them means: re-render each background without baked-in text (2 credits each) + free local overlay. Scope/priority is a budget call for the user — see the live conversation for the decision.
+This includes the Cadaver Synod thumbnail actually live on the channel right now, the 3 posted Shorts, and the 9 catalog-refresh images delivered earlier in this session. None are broken or unusable, but none match the evidence-backed pattern above. Regenerating them now means: one Nano Banana Pro generation each with the corrected prompt template (~2 credits, no separate overlay step needed). Scope/priority is a budget call for the user.
