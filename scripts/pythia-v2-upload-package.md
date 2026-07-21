@@ -16,6 +16,11 @@ Subscribe to HistOddities for more of the odd side of history.
 #OracleOfDelphi #AncientGreece #WeirdHistory
 ```
 
+## Tags
+```
+oracle of delphi, pythia, temple of apollo, ancient greece, greek mythology, socrates, delphi oracle, ancient history, greek philosophy, amphictyonic council, pythian games, weird history, historical mysteries, women in history
+```
+
 ## Thumbnails — matching each title (A/B/C)
 - **A** (matches title 1): Pythia in trance above the chasm, fumes rising, "KINGS TRUSTED A WOMAN / BREATHING TOXIC FUMES"
 - **B** (matches title 2): armored king kneeling before the enthroned priestess, "KINGS KNELT BEFORE / GOING TO WAR"
