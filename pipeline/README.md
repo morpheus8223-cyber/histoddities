@@ -89,6 +89,32 @@ the main body (stroboscopic multi-exposure javelin throwers) also resembles
 Riefenstahl's 1936 Olympics footage, whose licensing is murkier than plain
 public domain — worth a quick check before reuse as well.
 
+## Audio pacing — generate narration before assembly, then check duration
+
+`explainer_video` forces every block into a fixed window (10s if that's what
+the clip was generated at): a shorter voice take gets centered with silence
+padding, a longer one gets sped up "pitch-safely" to fit. That speed-up is
+audible and, on the Molasses Flood video, hit **23 of 60 blocks** — several
+by 60-80% (worst cases ran ~17.5s crammed into 10s) — because narration was
+written to *read* like a ~10s beat without ever checking the actual TTS
+output length against the fixed block duration. The fix that worked:
+
+1. After generating each `seed_audio` take, check its `durationSec` in the
+   job result.
+2. If it's off from the target block length by more than ~5%, regenerate
+   with the `speech_rate` param (range -50..100, positive = faster) rather
+   than letting `explainer_video` stretch it. Rough calibration: rendering
+   at `speech_rate=20` sped a 12.0s take up to ~9.8s — i.e.
+   `speech_rate ≈ (original_duration / target_duration - 1) * 88.5`. Verify
+   the actual result and nudge again if it's still off; the relationship is
+   roughly linear but not exact.
+3. Only then feed that block into `explainer_video`.
+
+Doing this check-then-correct pass *before* assembly — not after noticing
+the final video sounds rushed — is the real fix. For the next video, budget
+one `job_display` duration check per audio take as a standard pipeline step,
+not an optional one.
+
 ## Smoke-tested, not yet a finished shot
 
 Everything above has been run end-to-end on real files (the actual public-domain
