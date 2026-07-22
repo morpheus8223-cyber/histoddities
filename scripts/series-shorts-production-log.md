@@ -16,3 +16,7 @@ VISUALS (reused from molasses-flood-production-blocks.md, no new stills/clips ge
   3: block33 real composite media 6e40538a-098a-47bf-8b81-d8e1ba40a527 (real aftermath photo)
   4: block50 clip 7e1ee2f5-fb27-46e7-ba35-a4daa65c20a8 (engineer stamping blueprint) -- verify completion before assembly
 AUDIO (new, condensed short script wording): 1:b6363ca3-d4f7-42d0-8bc8-7a36d6fc07c9 2:afd2f2ac-579e-41e8-b61a-1029726469c7 3:c364f4c8-3be7-491c-a130-af52f38e47d3 4:52da5aef-8e8d-447b-bba5-0e0e8fe5e476
+
+## ASSEMBLY
+A1: 77f84dbe-ee41-469a-858d-4b92b37d280e (1080x1920, final)
+B3: a040e033-0809-44e7-bd7c-958a526d6a94 (1920x1080, needs local vertical conversion after)

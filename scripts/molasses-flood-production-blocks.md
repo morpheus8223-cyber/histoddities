@@ -150,3 +150,7 @@ REAL_COMPOSITES (uploaded media_ids): 4:ea4459d2-e9e5-43f3-81da-21ed7f7c4f45 19:
 A (real photo + PIL text, "Why Didn't Anyone Inspect..."): local file thumb_A.png, composited from block33_bw.jpg real aftermath photo
 B (AI Ashcan wave art, "Race To Empty Its Tank Before Prohibition"): job c2450e61-26ac-416f-b6c3-8d8abaa5cdc4
 C (AI Ashcan wave art, "2.3 Million Gallons"): job c46e6087-3d0c-42ae-8c84-871ad57e6052
+
+## FINAL ASSEMBLY
+PART1 (blocks 1-30): 495cab72-cdb9-4965-958a-b178ec9d94a2
+PART2 (blocks 31-60): 8dbb2219-9033-426b-97c9-a79568f8511c
