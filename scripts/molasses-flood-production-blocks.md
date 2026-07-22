@@ -210,3 +210,15 @@ naturally-spaced speech with no silence gap.
 Supersedes the earlier v1 final (job f66430d7, still referenced above for history but no longer current).
 Thumbnail A also fixed in this pass (see thumbnail section above) -- large yellow text on solid black
 banner instead of small white text with poor contrast.
+
+## THUMBNAIL D (added: legacy/consequence angle)
+Title: **Why A Wave Of Molasses Made Blueprints Require A Stamp**
+Truthful framing (matches the script's own hedge -- not "invented engineering licensure" outright,
+since it existed unevenly before 1919): this disaster is the case that hardened structural-review-
+and-stamp requirements into standard practice, per the Ogden findings becoming part of the public
+record and subsequent state law. "There's a reasonable argument" per the script narration, not an
+absolute claim.
+Visual: reused block 50's still (engineer stamping a blueprint whose diagram echoes the tank
+structure, harbor/crane skyline through the window) as an image reference, baked bold yellow text.
+Job: 64dd5dea-2440-4b38-85b8-a20bcc1acd72
+File: final-videos/molasses-flood/thumbnail-D-blueprint-stamp.png
