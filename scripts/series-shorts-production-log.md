@@ -68,3 +68,50 @@ AUDIO (seed_audio, Gideon preset) -- speech_rate correction turned out unreliabl
   be non-monotonic for a given line. Treat it as a rough nudge to retry once, not a formula to
   solve for an exact target; if two attempts don't converge, keep whichever take errs under the
   target rather than over it.
+
+## B1 REDO — clearer script + hybrid Narrative/Data-Explainer visuals (per user feedback)
+
+User feedback on the original cut: "not completely sure... story needs to be more clear,
+sometimes hard to follow, more boring... needs to be more clear and prioritize entertainment +
+education." Diagnosis: the actual explanatory beat (wild vs. farm-raised rabbit behavior) was
+crammed into dense narration with no dedicated visual -- the exact gap the Vox-style plan
+(`scripts/vox-style-production-plan.md`) identifies as a Data-Explainer scene.
+
+NEW SCRIPT (clearer beat structure: hook -> setup -> mechanism -> punchline):
+  1. "This is Napoleon. He conquered nearly all of Europe. In eighteen oh seven, in open
+     country, he was defeated by rabbits."
+  2. "His own staff planned the day as a triumph: a celebratory hunt. They gathered thousands
+     of rabbits and let them loose for him to shoot."
+  3. "Here's the problem. Wild rabbits run from people. These rabbits were farm raised. To
+     them, a person meant food was coming."
+  4. "The moment the cages opened, the entire horde charged the Emperor of Europe. He fled to
+     his carriage. The rabbits held the field."
+Cut vs. original: dropped the "This detail matters" narration crutch (telling the viewer to pay
+attention instead of earning it visually) and gave the wild/farm mechanism -- the actual joke
+engine -- its own dedicated beat instead of compressing it alongside the charge/retreat action.
+
+VOICE: Cillian (d8ba9f14-8a24-44db-932b-99e16c45bd32), replacing Gideon per user's pick from the
+4-way comparison. All 4 takes came back clean on the first try, no speech_rate correction needed:
+  1: e17dd99e-4f04-4065-850d-b64a37b73a53 (7.61s) 2: 8eb9c4fe-24b3-49b9-a9d7-b3110d31a215 (8.43s)
+  3: 901bb1cf-c802-49b1-b342-5d055e521137 (8.43s) 4: c9767ef0-325e-4ecd-8003-9a2c75689ad5 (10.60s)
+
+VISUALS -- hybrid Narrative + Data-Explainer, first real use of the new scene taxonomy:
+  Blocks 1, 2, 4: kept the existing Seedream/Seedance narrative clips (still fit the new script's
+  hook/setup/punchline beats) -- ad6565fd-1c04-4336-819c-ff79cf9b9479, 0b16db0b-11ec-44c1-b2ae-
+  90771f5048ac, 6839a151-54cc-4866-a577-be32f46b783c. No regeneration needed, saved ~270 credits.
+  Block 3 (new Data-Explainer beat): `recraft_v4_1` vector-mode graphic, brand-safe prompt (no
+  "Vox" wording, per the plan's rule) -- a rabbit calmly hand-fed beside a food bowl, labeled
+  "RAISED ON FARMS. FED BY HAND EVERY DAY." First attempt (33f19187) was a two-panel wild-vs-farm
+  arrow comparison, but both arrows rendered pointing the same direction -- the model couldn't
+  reliably encode "runs away" vs. "runs toward" via arrow direction, which would have made the
+  beat more confusing, not less. Simplified to one clear image with no directional encoding
+  needed. Turned into a 10s clip locally via `pipeline/compositing.py`'s `ken_burns_clip()` (free
+  -- no paid AI video generation for this beat, per the plan's cost model): padded the square
+  graphic onto a 1080x1920 off-white canvas, slow zoom 1.0->1.12. Uploaded via media_upload/
+  media_confirm (media_id 9bbbea43-23f8-46b3-ad85-b4883c9ba17b) for use in explainer_video.
+  Note for next time: the padded canvas leaves a lot of empty space above/below the square
+  graphic on a 9:16 frame -- design future Data-Explainer graphics natively vertical instead of
+  padding a square one.
+
+ASSEMBLY: aeea21aa-6f63-47ed-9405-9849a428e864 (1080x1920, native, 40.02s) -> replaced
+shorts/series-b-episode-1/napoleon-rabbits.mp4.
