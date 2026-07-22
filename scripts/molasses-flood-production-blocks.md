@@ -162,3 +162,37 @@ CDN source (single continuous file, direct download, no merging needed):
   (job f66430d7-d4c6-4ef5-86b1-c0935894f9fc, all 60 blocks assembled in one explainer_video call -- supersedes the earlier 2-part split, which needed a manual merge and wasn't necessary since the tool's real cap is 180 blocks)
 Runtime: 9:59.59 (1920x1080, 337MB)
 Final credit spend this cycle: ~1,342 credits (balance 2220.26 -> 877.76)
+
+## AUDIO PACING FIX (user-reported issue: 1:07-1:11 glitch + unnatural pacing throughout)
+Root cause confirmed: explainer_video forces every block into a fixed 10s window.
+Audio longer than 10s gets sped up "pitch-safely" by the tool -- 23 of 60 blocks
+ran significantly over 10s (worst: blocks 48/57/58 at ~17.5-17.8s, a 75-80% overrun),
+causing audible rushed/unnatural speech throughout. Fixed by regenerating those 23
+takes with a calibrated seed_audio speech_rate (calibration: rate=20 -> ~22.6% faster,
+so speech_rate ~= (original_duration/9.8 - 1) * 88.5, rounded).
+CORRECTED AUDIO:
+  block4 (was 12.01s): 2691e44f-01b5-4cb4-9960-6d55696478d4 (rate20, ->9.80s)
+  block5 (was 14.36s): 72284435-0aa4-4202-acb0-20dc51173c52 (rate41)
+  block6 (was 13.55s): 9cb55ec6-a4f9-4a31-a233-a8e58d48290a (rate34)
+  block7 (was 12.56s): 961f00db-351a-4067-a1aa-15ac76b1045b (rate25)
+  block17 (was 11.80s): b14f5aae-5849-4cd6-9d09-ea99fecc3dfd (rate18)
+  block22 (was 14.37s): 82f5dea9-8bd8-479c-950c-154cbfc87569 (rate41)
+  block26 (was 11.38s): e18a41e9-df11-40b4-8969-38cfee922892 (rate14)
+  block30 (was 16.33s): PENDING RETRY (rate limited)
+  block30 (was 16.33s): fc2df81e-fd27-4f34-8c85-942f7ce4d6eb (rate59)
+  block33 (was 13.60s): dfccacea-faa4-43e1-84b3-81b6c0896d08 (rate34)
+  block35 (was 11.28s): 41d10cc3-ee28-4bc9-bace-54555baae407 (rate13)
+  block37 (was 16.47s): 8b3d42ab-15dd-4d35-b812-7584004a0536 (rate60)
+  block42 (was 14.60s): 554b7437-5d0d-47ac-b273-13f9b3627b20 (rate43)
+  block44 (was 12.97s): 086cbd70-899b-4201-88ce-f7ad1514e75e (rate29)
+  block48 (was 17.81s): 5acf1f71-45f3-487f-8f21-42b7fa51aaf0 (rate72)
+  block50 (was 14.44s): af814c8c-590c-4fa2-a943-014f1f5c8dbf (rate42)
+  block57 (was 17.69s): b2c59dd9-a8de-4932-983c-6063195a3502 (rate71)
+  block58 (was 17.57s): d6bed5f1-f7fd-4f87-8294-5caca0ff9a05 (rate70)
+  block59 (was 11.26s): 6a563597-5ed4-4d7c-9041-87feaff31c9b (rate13)
+  block15 (was 10.58s): de5a1894-93df-4522-99e9-b015964aaa3d (rate7)
+  block19 (was 10.76s): 8d1802de-c87c-442e-9637-c140d37b8725 (rate9)
+  block23 (was 10.94s): ab307cbc-005b-4f6d-9fb8-1aaa6cbb2054 (rate10)
+  block47 (was 10.92s): 7d06c790-fd9f-4f90-9310-6f113dd26fef (rate10)
+  block54 (was 10.81s): a30a621f-b91b-4d32-a67b-eda570c3b009 (rate9)
+ALL 23 CORRECTIONS SUBMITTED. Next: verify durations, re-assemble full 60-block video with corrected audio swapped in.
