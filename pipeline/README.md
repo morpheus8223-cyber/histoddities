@@ -115,6 +115,25 @@ the final video sounds rushed — is the real fix. For the next video, budget
 one `job_display` duration check per audio take as a standard pipeline step,
 not an optional one.
 
+## Default voice change (Gideon → Cillian)
+
+User feedback on the Molasses Flood video: Gideon (`1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5`)
+reads as "too dreary." Compared 4 alternatives via `seed_audio` on the same test line;
+user picked **Cillian** (`d8ba9f14-8a24-44db-932b-99e16c45bd32`, preset). Use Cillian as
+the default `voice_id` for all narration going forward.
+
+## Vox-style upgrade (planned) — see `scripts/vox-style-production-plan.md`
+
+Full plan for adding a third scene type — **Data-Explainer** (flat-vector maps,
+graphs, stat callouts, brand-safe hand-drawn style via `recraft_v4_1`) — alongside
+the existing Narrative (AI cinematic) and Archival (real photo) paths, plus a
+script-writing checklist for scene-type diversity. Two new compositing functions
+still to build: `map_reveal()`, `graph_reveal()`. **Prompting rule discovered during
+testing: never write "Vox" in a generation prompt** — `recraft_v4_1` reproduces the
+real Vox wordmark/logo when the brand is named directly; describe the visual
+attributes (hand-drawn wobbly ink, off-white background, ink-speckle texture, one
+accent color, no logos) instead, which gives the same look with zero brand risk.
+
 ## Smoke-tested, not yet a finished shot
 
 Everything above has been run end-to-end on real files (the actual public-domain
