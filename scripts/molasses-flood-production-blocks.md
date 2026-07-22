@@ -145,3 +145,8 @@ AUDIO (cont13): 54:e8424506-8491-46e3-8e88-ea6b5012fc69 55:3d2cf430-bec2-4658-93
 AUDIO (final): 58:913d08a9-ea97-4436-85d9-f8f81dfd5b75 59:259ff066-537c-42ca-8645-5e0d013ec433 60:93062433-579d-4249-b7d9-ec0268cfb542
 ALL 60 AUDIO TAKES SUBMITTED.
 REAL_COMPOSITES (uploaded media_ids): 4:ea4459d2-e9e5-43f3-81da-21ed7f7c4f45 19:5de1a2e5-9ec6-44bc-ac72-4efe0c6a29ef 33:6e40538a-098a-47bf-8b81-d8e1ba40a527 34:bab982e1-65cb-43b7-8123-e723828679d7 35:56a320dd-15a0-417a-9dff-53ddb9e0f6b3 55:73bc6af6-ea1d-4a29-9ac6-ff8e76fc4959
+
+## THUMBNAILS (3 A/B/C matching alt titles)
+A (real photo + PIL text, "Why Didn't Anyone Inspect..."): local file thumb_A.png, composited from block33_bw.jpg real aftermath photo
+B (AI Ashcan wave art, "Race To Empty Its Tank Before Prohibition"): job c2450e61-26ac-416f-b6c3-8d8abaa5cdc4
+C (AI Ashcan wave art, "2.3 Million Gallons"): job c46e6087-3d0c-42ae-8c84-871ad57e6052
