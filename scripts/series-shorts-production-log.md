@@ -31,3 +31,10 @@ per hour. People could not outrun it." New audio: dffa4ecb-a7a4-4d83-9c30-1be487
 natural duration, clean waveform, no repeat pattern).
 Re-assembled: 36cd5d44-301b-48ed-8481-0a66523257a1 (1920x1080) -> local vertical conversion ->
 shorts/series-b-episode-3/molasses-teaser.mp4 (40.02s, 1080x1920)
+
+## B1 — Why Did Napoleon Retreat From Rabbits? (TEST: Seedream 5.0 Pro, cinematic photoreal style, vs nano_banana_pro painterly brand)
+STYLE: "Cinematic film still, dramatic natural lighting, shallow depth of field, rich color grading,
+photorealistic historical epic drama style, 35mm film grain" -- deliberate departure from the
+established painterly brand for direct model/style comparison per user request.
+Cost: 3 credits/still (vs 2 for nano_banana_pro) -- confirmed via transactions.
+STILLS (seedream_v5_pro, 9:16, 2k): 1:c6fdd488-64b7-461a-b32f-7bf87887c071 2:706323a1-f238-4989-a159-d8b60008e34e 3:99c0f836-28bc-4d36-8637-aeb47a4d2a50 4:e9d9ab0c-1263-406b-ac30-7c17c4efacd5
