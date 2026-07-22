@@ -154,3 +154,11 @@ C (AI Ashcan wave art, "2.3 Million Gallons"): job c46e6087-3d0c-42ae-8c84-871ad
 ## FINAL ASSEMBLY
 PART1 (blocks 1-30): 495cab72-cdb9-4965-958a-b178ec9d94a2
 PART2 (blocks 31-60): 8dbb2219-9033-426b-97c9-a79568f8511c
+
+## FINAL DELIVERABLE
+Local file: final-videos/molasses-flood/molasses_flood_FINAL.mp4 (322MB, too large for git -- delivered directly, not committed)
+CDN sources (durable reference): 
+  part1 (blocks 1-30): https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_005017_495cab72-cdb9-4965-958a-b178ec9d94a2.mp4
+  part2 (blocks 31-60): https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_005112_8dbb2219-9033-426b-97c9-a79568f8511c.mp4
+Runtime: 9:59.55 (1920x1080)
+Final credit spend this cycle: ~1,342 credits (balance 2220.26 -> 877.76)
