@@ -115,3 +115,59 @@ VISUALS -- hybrid Narrative + Data-Explainer, first real use of the new scene ta
 
 ASSEMBLY: aeea21aa-6f63-47ed-9405-9849a428e864 (1080x1920, native, 40.02s) -> replaced
 shorts/series-b-episode-1/napoleon-rabbits.mp4.
+
+## B1 REBUILD 2 — researched hook/body/payoff structure + real motion graphics (per user feedback)
+
+User was still unhappy after REDO 1: "the vox 'style' was just an added still basic drawing" and
+"theres no clear structure, hook, explanation, conclusion" -- explicit instruction to research
+what actually works for viral shorts in this niche and replicate it, rather than guessing.
+
+RESEARCH (WebSearch/WebFetch, see chat for full findings):
+- [The Shorts Retention Blueprint](https://virvid.ai/blog/shorts-retention-blueprint-ai-data-signals)
+- [Looping Structure: The Hidden Retention Trick](https://virvid.ai/blog/looping-structure-shorts-retention-2026)
+- [10 Viral Hook Templates](https://virvid.ai/blog/ai-shorts-script-hook-ultimate-guide-2026)
+- [14 YouTube Shorts Hook Patterns](https://shorta.ai/blog/2026-01-04-youtube-shorts-hook-patterns)
+- [Short-Form Video Structure: Hook, Body, Payoff](https://www.socialync.io/blog/short-form-video-structure-guide-2026)
+Core structure that survived across all sources: Hook (1-3s, bold claim/contradiction/curiosity
+gap, short sentences) -> Body (70-80%, escalating: setup then twist/mechanism) -> Payoff (10-20%,
+resolves the hook's specific claim, ideally as a callback loop -- ending echoes the opening so the
+viewer mentally rewatches, the single biggest retention lever documented across sources).
+
+SCRIPT v3 (hook/body/payoff+loop, contradiction-hook per "everything you knew about X is wrong" /
+bold-claim pattern):
+  1. HOOK: "Napoleon Bonaparte never lost a battle in open country. Except once. Against rabbits."
+  2. BODY/setup: "His own staff planned it as a triumph, a hunt to celebrate a treaty. Thousands
+     of rabbits, released just for him to shoot."
+  3. BODY/twist (Data-Explainer beat): "But these weren't wild rabbits. They had been raised by
+     hand, fed by hand, every day. To them, a person didn't mean danger. It meant dinner."
+  4. PAYOFF+LOOP: "The cages opened. The horde charged the Emperor of Europe. He fled to his
+     carriage. His undefeated record in open country? Gone." (trimmed from a first take that ran
+     29 words/12.745s -- callback deliberately echoes the hook's "never lost a battle in open
+     country" claim, closing the loop.)
+
+AUDIO (Cillian, all fresh takes): 1: f42992ca-6ee1-48ae-a4c7-fc85766744b6 (5.58s -- short punchy
+hook, intentionally under the 10s block; the research explicitly wants hooks terse, not padded)
+2: 8a024a71-9303-4c7f-8aa1-935954b9f410 (9.08s) 3: 7d108c04-9137-43f6-b924-58f7a3872683 (10.09s)
+4: b8f9f003-58d2-4cfe-97b8-a629add07b2f (9.73s, after trimming the original 12.75s take -- see
+pipeline/README.md, speech_rate correction proved non-monotonic/unreliable here, trimming the
+line itself is what actually worked).
+
+VISUALS: blocks 1/2/4 unchanged (still fit the new script's beats). Block 3 rebuilt from scratch
+as genuine layered motion graphics instead of REDO 1's single static image + Ken Burns pan (the
+thing the user correctly flagged as "just an added still basic drawing"):
+- 3 separate transparent-background cutouts via recraft_v4_1 (`background_color: null`): a
+  sitting rabbit (750ac293), a food bowl (74f976b8), a hand offering food (522f59b8). First
+  two-panel wild-vs-farm comparison attempt (efcf0434) was scrapped in REDO 1 already for
+  ambiguous arrow direction -- this time skipped that concept entirely in favor of one clear
+  feeding scene assembled from separately animatable pieces.
+- New `pipeline/compositing.py` function `layered_reveal_clip()`: each cutout fades/slides/scales
+  in on its own timer (bowl 0.0-0.6s, rabbit pop-in 0.6-1.2s, hand slides in 1.3-1.9s, two text
+  bands fade up at 2.1s and 4.3s), plus a continuous slow zoom (1.0->1.05) under everything so
+  there's always some motion, not just discrete pops. Rendered 300 frames at 30fps, encoded via
+  ffmpeg. Iterated composition twice (bowl felt disconnected from the rabbit group; food wasn't
+  reaching the rabbit's mouth) by checking rendered test frames before committing to the full
+  render -- final layout reads clearly as "rabbit being hand-fed beside its bowl."
+  Uploaded as media_id 7d65cf4e-afda-4e17-a347-76b062c5d617.
+
+ASSEMBLY: 0649658c-052c-42ad-94e0-73383c3e0316 (1080x1920, native, 40.02s) -> replaced
+shorts/series-b-episode-1/napoleon-rabbits.mp4 again.

@@ -103,11 +103,17 @@ output length against the fixed block duration. The fix that worked:
    job result.
 2. If it's off from the target block length by more than ~5%, regenerate
    with the `speech_rate` param (range -50..100, positive = faster) rather
-   than letting `explainer_video` stretch it. Rough calibration: rendering
-   at `speech_rate=20` sped a 12.0s take up to ~9.8s — i.e.
-   `speech_rate ≈ (original_duration / target_duration - 1) * 88.5`. Verify
-   the actual result and nudge again if it's still off; the relationship is
-   roughly linear but not exact.
+   than letting `explainer_video` stretch it. Rough calibration from the
+   Molasses Flood video: rendering at `speech_rate=20` sped a 12.0s take up
+   to ~9.8s. **Update from the B1 short: this calibration does not reliably
+   transfer to other text.** Two documented cases where it was actively
+   non-monotonic — a *lower* speech_rate produced a *shorter* result than a
+   higher one, and vice versa on the slow-down side. Treat speech_rate as a
+   rough one-shot nudge, not a solvable formula; if a correction attempt
+   doesn't converge, don't keep tuning the number — either trim/reword the
+   line itself (this reliably works, unlike the parameter), or accept
+   whichever take errs *under* the target rather than over it (padding is
+   inaudible, the pitch-safe speedup is not).
 3. Only then feed that block into `explainer_video`.
 
 Doing this check-then-correct pass *before* assembly — not after noticing
@@ -122,17 +128,44 @@ reads as "too dreary." Compared 4 alternatives via `seed_audio` on the same test
 user picked **Cillian** (`d8ba9f14-8a24-44db-932b-99e16c45bd32`, preset). Use Cillian as
 the default `voice_id` for all narration going forward.
 
-## Vox-style upgrade (planned) — see `scripts/vox-style-production-plan.md`
+## Vox-style upgrade — see `scripts/vox-style-production-plan.md`
 
-Full plan for adding a third scene type — **Data-Explainer** (flat-vector maps,
-graphs, stat callouts, brand-safe hand-drawn style via `recraft_v4_1`) — alongside
-the existing Narrative (AI cinematic) and Archival (real photo) paths, plus a
-script-writing checklist for scene-type diversity. Two new compositing functions
-still to build: `map_reveal()`, `graph_reveal()`. **Prompting rule discovered during
-testing: never write "Vox" in a generation prompt** — `recraft_v4_1` reproduces the
-real Vox wordmark/logo when the brand is named directly; describe the visual
-attributes (hand-drawn wobbly ink, off-white background, ink-speckle texture, one
-accent color, no logos) instead, which gives the same look with zero brand risk.
+Adds a third scene type — **Data-Explainer** (flat-vector maps, graphs, stat
+callouts, brand-safe hand-drawn style via `recraft_v4_1`) — alongside the
+existing Narrative (AI cinematic) and Archival (real photo) paths. **Prompting
+rule discovered during testing: never write "Vox" in a generation prompt** —
+`recraft_v4_1` reproduces the real Vox wordmark/logo when the brand is named
+directly; describe the visual attributes (hand-drawn wobbly ink, off-white
+background, ink-speckle texture, one accent color, no logos) instead, which
+gives the same look with zero brand risk.
+
+**First real build, and a correction**: the first attempt at a Data-Explainer
+beat (B1's wild-vs-farm-rabbit mechanism) used a single flat merged image run
+through `ken_burns_clip()` — user feedback was that this "was just an added
+still basic drawing," i.e. it read as static despite the pan/zoom. Fixed with
+`layered_reveal_clip()`: generate each visual element as its own transparent-
+background cutout (`recraft_v4_1` with `background_color: null`), then stage
+their fade/slide/scale-in entrances on independent timers synced to the
+narration, plus text bands that fade up separately. This is what actually
+makes a Data-Explainer beat feel like built-up motion graphics instead of a
+still with camera movement — the pan/zoom alone was never the missing piece.
+
+## Short-form script structure — hook / body / payoff-with-loop
+
+Researched what actually drives retention on short-form (WebSearch, see
+`scripts/series-shorts-production-log.md`'s B1 rebuild section for sources).
+The structure that keeps viewers watching:
+1. **Hook (first ~3s of the block)**: a bold claim, contradiction, or
+   curiosity-gap opener, in short sentences — not a scene-setting intro.
+2. **Body (escalating)**: setup, then a twist/mechanism beat that resolves the
+   hook's tension — this is exactly where a Data-Explainer beat earns its
+   place, giving the mechanism its own clear visual instead of burying it in
+   narration.
+3. **Payoff, with a callback loop**: resolve the hook's specific claim by name
+   ("that undefeated record? gone") rather than just narrating the ending —
+   the callback is what makes a viewer mentally rewatch the opening, which is
+   the single biggest lever for retention/replays on this format.
+Apply this structure to every future short's script draft, not just B1's.
 
 ## Smoke-tested, not yet a finished shot
 
