@@ -157,8 +157,8 @@ PART2 (blocks 31-60): 8dbb2219-9033-426b-97c9-a79568f8511c
 
 ## FINAL DELIVERABLE
 Local file: final-videos/molasses-flood/molasses_flood_FINAL.mp4 (322MB, too large for git -- delivered directly, not committed)
-CDN sources (durable reference): 
-  part1 (blocks 1-30): https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_005017_495cab72-cdb9-4965-958a-b178ec9d94a2.mp4
-  part2 (blocks 31-60): https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_005112_8dbb2219-9033-426b-97c9-a79568f8511c.mp4
-Runtime: 9:59.55 (1920x1080)
+CDN source (single continuous file, direct download, no merging needed):
+  https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_010540_f66430d7-d4c6-4ef5-86b1-c0935894f9fc.mp4
+  (job f66430d7-d4c6-4ef5-86b1-c0935894f9fc, all 60 blocks assembled in one explainer_video call -- supersedes the earlier 2-part split, which needed a manual merge and wasn't necessary since the tool's real cap is 180 blocks)
+Runtime: 9:59.59 (1920x1080, 337MB)
 Final credit spend this cycle: ~1,342 credits (balance 2220.26 -> 877.76)
