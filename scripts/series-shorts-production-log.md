@@ -32,9 +32,39 @@ natural duration, clean waveform, no repeat pattern).
 Re-assembled: 36cd5d44-301b-48ed-8481-0a66523257a1 (1920x1080) -> local vertical conversion ->
 shorts/series-b-episode-3/molasses-teaser.mp4 (40.02s, 1080x1920)
 
-## B1 — Why Did Napoleon Retreat From Rabbits? (TEST: Seedream 5.0 Pro, cinematic photoreal style, vs nano_banana_pro painterly brand)
+## B1 — Why Did Napoleon Retreat From Rabbits? (TEST: Seedream 5.0 Pro stills + Seedance 2.0 video, cinematic photoreal style, vs nano_banana_pro/kling3_0_turbo painterly brand)
 STYLE: "Cinematic film still, dramatic natural lighting, shallow depth of field, rich color grading,
 photorealistic historical epic drama style, 35mm film grain" -- deliberate departure from the
 established painterly brand for direct model/style comparison per user request.
 Cost: 3 credits/still (vs 2 for nano_banana_pro) -- confirmed via transactions.
 STILLS (seedream_v5_pro, 9:16, 2k): 1:c6fdd488-64b7-461a-b32f-7bf87887c071 2:706323a1-f238-4989-a159-d8b60008e34e 3:99c0f836-28bc-4d36-8637-aeb47a4d2a50 4:e9d9ab0c-1263-406b-ac30-7c17c4efacd5
+
+VIDEO MODEL CORRECTION: user clarified "seeddream 2.0" meant Seedance 2.0 (ByteDance video model),
+not Kling. Two kling3_0_turbo clips were started on blocks 1-2 before the correction landed --
+those job IDs are abandoned/unused, not in the final cut.
+CLIPS (seedance_2_0, 9:16, 1080p, std mode, genre=epic, duration=10s, generate_audio=false):
+  1: ad6565fd-1c04-4336-819c-ff79cf9b9479 (Napoleon push-in)
+  2: 0b16db0b-11ec-44c1-b2ae-90771f5048ac (soldiers/crates)
+  3: 9b8e9b16-11d6-4400-ac6a-cd5d518bc6eb (wave approaching chateau) -- hit the "IN THE DARK" preset
+     interception, retried literal with declined_preset_id: 24bae836-2c4a-48e0-89b6-49fcc0b21612
+  4: 6839a151-54cc-4866-a577-be32f46b783c (carriage racing away)
+Cost: 90 credits/clip std 1080p (vs 20 credits/clip for kling3_0_turbo) -- confirmed via get_cost
+preflight. 4.5x the price of the established pipeline's video step.
+
+AUDIO (seed_audio, Gideon preset) -- speech_rate correction turned out unreliable for this text:
+  Block 1: rate=0 -> 12.745s, rate=24 -> 7.859s, rate=13 -> 7.363s (non-monotonic: a LOWER rate
+    produced a SHORTER duration than a higher one). Kept rate=24 take (3eaa7a6a-fca1-420e-b869-
+    4b916d92750b, 7.859s) as least-bad: under target pads with silence rather than the audible
+    speedup an over-length take would get in explainer_video.
+  Block 2: rate=0 -> 8.62s (used, 990cc73b-8f84-4bcf-b4fe-3cee35587c2a), rate=-12 -> 13.475s,
+    rate=-3 -> 14.2145s (again non-monotonic: less-negative rate produced a LONGER duration).
+    Kept the original rate=0 take -- both "corrections" made it worse.
+  Block 3: 02958ec4-0aa7-4d68-8df0-4a1a46e32465, 9.435s (rate=0, within ~6% of target, no
+    correction needed).
+  Block 4: d637882a-6e44-4dbe-a3db-0815524838ca, 9.405s (rate=0, within ~6% of target, no
+    correction needed).
+  Lesson for pipeline/README.md: the speech_rate-to-duration relationship documented from the
+  Molasses Flood calibration does not reliably transfer across different narration text -- it can
+  be non-monotonic for a given line. Treat it as a rough nudge to retry once, not a formula to
+  solve for an exact target; if two attempts don't converge, keep whichever take errs under the
+  target rather than over it.
