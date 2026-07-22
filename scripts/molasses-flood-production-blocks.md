@@ -195,4 +195,18 @@ CORRECTED AUDIO:
   block23 (was 10.94s): ab307cbc-005b-4f6d-9fb8-1aaa6cbb2054 (rate10)
   block47 (was 10.92s): 7d06c790-fd9f-4f90-9310-6f113dd26fef (rate10)
   block54 (was 10.81s): a30a621f-b91b-4d32-a67b-eda570c3b009 (rate9)
-ALL 23 CORRECTIONS SUBMITTED. Next: verify durations, re-assemble full 60-block video with corrected audio swapped in.
+ALL 23 CORRECTIONS SUBMITTED. Verified: all 23 corrected takes landed at or near their 10s target
+(e.g. blocks 48/57/58, the worst offenders at ~17.5-17.8s originally, now land at 9.07s/10.08s/9.09s).
+Re-assembled as a single 60-block explainer_video call (job 014e7cbc-77a6-449d-85b9-0a6276c93758).
+
+## FINAL DELIVERABLE (v2 -- corrected audio pacing + fixed thumbnail A)
+Local file: final-videos/molasses-flood/molasses_flood_FINAL.mp4 (337MB, gitignored -- too large for git)
+CDN source (single continuous file, direct download):
+  https://d8j0ntlcm91z4.cloudfront.net/user_3GZuw4nJQ5mTy4I2LBnkGd4thMu/hf_20260722_055826_014e7cbc-77a6-449d-85b9-0a6276c93758.mp4
+Runtime: 9:59.46 (1920x1080)
+Verified via waveform comparison at the reported glitch spot (55-85s window): the original showed
+cramped/rushed speech bursts followed by a long dead-silence gap; the corrected version shows even,
+naturally-spaced speech with no silence gap.
+Supersedes the earlier v1 final (job f66430d7, still referenced above for history but no longer current).
+Thumbnail A also fixed in this pass (see thumbnail section above) -- large yellow text on solid black
+banner instead of small white text with poor contrast.
