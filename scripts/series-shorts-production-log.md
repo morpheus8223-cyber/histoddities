@@ -20,3 +20,14 @@ AUDIO (new, condensed short script wording): 1:b6363ca3-d4f7-42d0-8bc8-7a36d6fc0
 ## ASSEMBLY
 A1: 77f84dbe-ee41-469a-858d-4b92b37d280e (1080x1920, final)
 B3: a040e033-0809-44e7-bd7c-958a526d6a94 (1920x1080, needs local vertical conversion after)
+
+## B3 AUDIO FIX (user-reported: first few words immediately repeated in block 1)
+Root cause: original block1 audio (b6363ca3, 11.0s) and two regeneration attempts (760599d9 13.1s,
+3c191b4b 12.3s) all ran anomalously long with a repeated-phrase pattern visible in the waveform --
+consistent with "In nineteen nineteen" (immediate word repetition) landing as the literal first
+words spoken, a known TTS repeat-loop trigger. Fixed by rewording (same meaning, year moved
+mid-sentence): "A wave of molasses moved through Boston in nineteen nineteen at thirty-five miles
+per hour. People could not outrun it." New audio: dffa4ecb-a7a4-4d83-9c30-1be487a21a4b (7.47s,
+natural duration, clean waveform, no repeat pattern).
+Re-assembled: 36cd5d44-301b-48ed-8481-0a66523257a1 (1920x1080) -> local vertical conversion ->
+shorts/series-b-episode-3/molasses-teaser.mp4 (40.02s, 1080x1920)
