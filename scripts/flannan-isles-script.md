@@ -105,6 +105,23 @@ if a wave really did hit that spot."
 (Visual: Data-Explainer beat — a simple map/diagram of the island showing the west
 landing, the wave's path, matching our layered_reveal_clip() device.)
 
+**Second-person reconstruction (new device, borrowed from the Pompeii reference
+video's "you're a baker's apprentice" mechanic — this is the actual technique behind
+"watching events unfold as if we were there," not just photoreal visuals):**
+"Here's Muirhead's theory, reconstructed, minute by minute. It's a Saturday afternoon
+in December. You and Marshall head down to the west landing to check the ropes and
+the supply box before the weather turns. Ducat stays up top. The sea already looks
+wrong — heavier than it should. You're securing the last line when you hear it:
+a wave bigger than anything that's hit this rock in years. There's no time to run.
+Ducat, watching from above, sees it happen. He doesn't stop to grab his coat. He
+goes down after you. A second wave meets him on the way." — Explicitly framed as
+"here's the theory," not narrated as established fact, to keep the honesty standard
+intact while still using the immersive device.
+**Button (moved after the reconstruction):** "It's the most boring possible
+explanation for one of the eeriest disappearances in maritime history. It's also
+the only one with actual physical evidence behind it — the landing gear was found
+damaged, exactly where you'd expect if a wave really did hit that spot."
+
 ## CHAPTER 5 — The Legend vs. The Log (myth-correction — mechanic #2, stacked)
 **Hook:** "If you've heard this story before, you've probably heard about a
 terrifying final log entry. It's the best part of the legend. It's also not real."
