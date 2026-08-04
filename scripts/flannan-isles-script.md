@@ -15,8 +15,28 @@ character face across shots (matching the reference thumbnails' reused actor-lik
 identity) representing the keepers, real archival photos where they exist (the actual
 lighthouse, real Northern Lighthouse Board documents/photos if sourceable), bold
 high-contrast thumbnail text (red/yellow, heavy outline) replacing the current amber/
-gold refined brand for this video. Flagged for a test-still validation pass before
-full production, same approach used for B1's Seedream test.
+gold refined brand for this video. Test still (b2f85d4c) confirmed this style works.
+
+**Thumbnail text — use AI text rendering, not manual compositing.** First pass used
+PIL to composite text onto a generated still (the faux-condensed technique from the
+Molasses thumbnails); user feedback: use AI for the text instead. Retested with
+`nano_banana_pro` (called out specifically for strong text rendering) prompting the
+scene AND the bold text together in one generation — result (24559b2f) is crisp,
+correctly kerned, genuinely impact-style lettering, no manual compositing artifacts.
+**This is now the standard approach for every thumbnail on this video and going
+forward**: describe the full thumbnail (scene + exact text + placement) in a single
+`nano_banana_pro` prompt rather than generating a clean plate and adding text after.
+
+**Runtime target: 5-7 minutes**, down from the ~10 minute Molasses Flood length —
+applies to this video and all future longforms. The 6-chapter structure below
+should compress comfortably into that window; block count will be tuned down
+accordingly at the production-blocks stage (roughly 30-42 blocks at 10s each vs.
+Molasses Flood's 60, or fewer/longer blocks if using Seedance's up-to-15s range).
+
+**Video style reference**: user provided a Drive folder of 3 reference videos
+(`Pompeii_Volcano_2.mp4`, `venice_5min_doc_prob4.mp4`, `ocean_music.mp4`) — downloaded
+and run through `video_analysis_create` for scene-by-scene breakdown, same method
+used for the Vox and Bright Side research. Findings pending (analysis in progress).
 
 ## Titles (question-hook, our strongest proven mechanic)
 1. **Why Did Three Lighthouse Keepers Vanish Without A Trace In 1900?** — my pick,
@@ -116,6 +136,23 @@ HistOddities for more of history's true unsolved cases, and let us know in the
 comments what you think actually happened out on that rock."
 
 ---
+
+## Kling vs. Seedance 2.0 pricing (confirmed via get_cost preflight)
+
+| Model | Resolution/mode | Cost/10s clip | Cost/sec |
+|---|---|---|---|
+| kling3_0_turbo | 1080p | 20 credits | 2.0 credits/s |
+| seedance_2_0 | 720p, fast mode | 35 credits | 3.5 credits/s |
+| seedance_2_0 | 1080p, std mode | 90 credits | 9.0 credits/s |
+| seedance_2_0 | 4k, std mode | 220 credits | 22.0 credits/s |
+
+Both scale linearly with duration (confirmed: Kling 5s = 10 credits, Seedance
+1080p/std 5s = 45 credits). **Seedance 1080p/std is 4.5x Kling's price; Seedance 4k
+is 11x.** For a 5-7 min video at ~30-40 blocks, full Seedance 1080p would run
+~2,700-3,600 credits vs. ~600-800 for Kling — a meaningful budget decision, not a
+rounding error. Recommend: Seedream stills (photoreal quality, 3 credits/still)
+animated with Kling for most blocks, reserving Seedance for a handful of hero shots
+if the budget allows, rather than Seedance throughout — pending your call.
 
 ## Production notes
 - Fact base: Northern Lighthouse Board records, Robert Muirhead's official report,
